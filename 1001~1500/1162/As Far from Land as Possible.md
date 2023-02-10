@@ -1,4 +1,3 @@
-###### tags: `LeetCode`
 # 1162. As Far from Land as Possible
 
 ## 題目

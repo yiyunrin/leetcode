@@ -1,3 +1,4 @@
+//方法一(自己想的方法)
 class Solution {
 public:
     vector<int> fullBloomFlowers(vector<vector<int>>& flowers, vector<int>& people) {
@@ -39,5 +40,39 @@ public:
             now = next;
         }
         return people;
+    }
+};
+
+//方法二(參考solution)時間較佳
+class Solution {
+public:
+    vector<int> fullBloomFlowers(vector<vector<int>>& flowers, vector<int>& people) {
+        int fw_sz = flowers.size(), pp_sz = people.size();
+        //存花開時間和花謝時間
+        vector<int> st(fw_sz), ed(fw_sz);
+        for(int i = 0;i < fw_sz;i ++){
+            st[i] = flowers[i][0];
+            ed[i] = flowers[i][1];
+        }
+        //由小到大排序
+        sort(st.begin(), st.end());
+        sort(ed.begin(), ed.end());
+        //可以看到的花數是(抵達時間前的開花數)-(抵達時間前的花謝數)
+        for(int i = 0;i < pp_sz;i ++)
+            people[i] = bs(st, people[i] + 1) - bs(ed, people[i]);
+        return people;
+    }
+private:
+    //用binary search在x裡找target的位置
+    int bs(vector<int> &x, int target){
+        int l = 0, r = x.size() - 1;
+        while(l <= r){
+            int mid = l + (r - l) / 2;
+            if(x[mid] < target)
+                l = mid + 1;
+            else
+                r = mid - 1;
+        }
+        return r;
     }
 };

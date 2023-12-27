@@ -26,7 +26,7 @@
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
 
 # Code
-```
+```cpp
 class Solution {
 public:
     int minCost(string colors, vector<int>& neededTime) {

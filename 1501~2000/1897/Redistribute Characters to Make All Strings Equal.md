@@ -22,6 +22,8 @@
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
 
 # Code
+
+### C++
 ```cpp
 class Solution {
 public:
@@ -37,5 +39,22 @@ public:
                 return false;
         return true;
     }
+
 };
+```
+### python
+```python
+class Solution:
+    def makeEqual(self, words: List[str]) -> bool:
+        cnt = [0 for _ in range(26)]
+        n = len(words)
+        # 計算字母數量
+        for w in words:
+            for c in w:
+                cnt[ord(c) - ord('a')] += 1
+        # 判斷是否能被n整除
+        for i in range(26):
+            if cnt[i] % n != 0:
+                return False
+        return True
 ```

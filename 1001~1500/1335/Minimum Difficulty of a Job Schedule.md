@@ -13,10 +13,10 @@
     - 總共有 i + 1 天，做 j 個工作
     - 第 0 ~ k - 1 個工作在前 i 天做完，第 k ~ j 個工作在第 i + 1 天做完
 # Complexity
-- Time complexity:$$O(d * n * n)$$
+- Time complexity : O(d * n * n)
 <!-- Add your time complexity here, e.g. $$O(n)$$ -->
 
-- Space complexity:$$O(d * n)$$
+- Space complexity : O(d * n)
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
 
 # Code

@@ -17,7 +17,7 @@
     - m 表示所有字串長度的平均 
 <!-- Add your time complexity here, e.g. $$O(n)$$ -->
 
-- Space complexit y: O(1)
+- Space complexity: O(1)
     - 開了一個大小26的陣列 -> 所以是 O(1)
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
 
